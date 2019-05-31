@@ -1,0 +1,5 @@
+CHART_PATH="bbs-os2display/os2display"  
+ENVIRONMENT_PREFIX="os2display"
+RELEASE_TAG_PREFIX="bbs-build"
+RELEASE_IMAGE_PATH="eu.gcr.io/os2display-bbs/os2display-bbs/os2display-admin-release"
+BASE_URL="os2display-bbs.reload.dk"

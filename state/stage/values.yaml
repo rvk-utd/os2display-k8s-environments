@@ -1,0 +1,24 @@
+# Docker image configuration
+images:
+  adminRelease:
+    image: eu.gcr.io/os2display-bbs/os2display-bbs/os2display-admin-release
+    tag: bbs-build-10
+
+# Application configuration
+os2display:
+  general:
+    environmentName: stage
+
+  admin:
+    publicDomain: "stage.admin.os2display-bbs.reload.dk"
+    publicUrl: "https://stage.admin.os2display-bbs.reload.dk"
+    mailerFromEmail: "admin-stage@example.com"
+    mailerFromName: "OS2Display stage Admin"
+
+  screen:
+    publicDomain: "stage.screen.os2display-bbs.reload.dk"
+    publicUrl: "https://stage.screen.os2display-bbs.reload.dk"
+
+  search:
+    publicDomain: "stage.search.os2display-bbs.reload.dk"
+    publicUrl: "https://stage.search.os2display-bbs.reload.dk"
