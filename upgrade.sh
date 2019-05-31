@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 IFS=$'\n\t'
+source _variables.source
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "${SCRIPT_DIR}"
@@ -12,10 +13,9 @@ fi
 
 ENV=$1
 ENV_STATE_DIR="${SCRIPT_DIR}/state/${ENV}"
-RELEASE_NAME="os2display-${ENV}"
+RELEASE_NAME="${ENVIRONMENT_PREFIX}-${ENV}"
 VALUES_PATH="${ENV_STATE_DIR}/values.yaml"
 SECRETS_PATH="${ENV_STATE_DIR}/secrets.yaml"
-CHART_PATH="os2display/os2display"
 
 if [[ ! -f "${VALUES_PATH}" ]] ; then
     echo "Missing values-file ${VALUES_PATH}"
@@ -30,7 +30,7 @@ fi
 echo "Upgrading ${ENV}."
 echo
 echo "Will"
-echo "- Do a helm upgrade of ${RELEASE_NAME} using the values from ${VALUES_PATH}"
+echo "- Do a helm upgrade of ${RELEASE_NAME} using the values from ${VALUES_PATH} using the chart ${CHART_PATH}"
 read -p "Continue? (y/n) " -n 1 -r
 echo
 if [[ ! $REPLY =~ ^[Yy]$ ]]
