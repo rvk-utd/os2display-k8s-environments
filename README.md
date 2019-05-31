@@ -8,6 +8,9 @@ Requirements:
 * The Helm client
 * kubectl and a working connection to the cluster (see os2display-infrastructure for details on how to connect).
 
+## Initial repository configuration
+Create a `<some-prefix>-master` branch, copy `_variables.source.example` to `_variables.source` and customize the settings in the file. Then commit the file to your repository, and use your branch for futur work.
+
 ## Setting up Helm
 You first need to add the chart repository to your local helm client.
 

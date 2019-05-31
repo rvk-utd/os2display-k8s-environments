@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 IFS=$'\n\t'
+source _variables.source
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "${SCRIPT_DIR}"
@@ -31,6 +32,9 @@ mkdir "${ENV_STATE_DIR}"
 
 export ENVIRONMENT=$ENV
 export ADMIN_SECRET=$(head /dev/urandom | tr -dc a-z0-9 | head -c50)
+export RELEASE_IMAGE_PATH=$RELEASE_IMAGE_PATH
+export RELEASE_TAG_PREFIX=$RELEASE_TAG_PREFIX
+export BASE_URL=$BASE_URL
 export ADMIN_RELEASE_NUMBER=$ADMIN_RELEASE_NUMBER
 export SEARCH_SECRET=$(head /dev/urandom | tr -dc a-z0-9 | head -c50)
 export SEARCH_ADMIN_USERNAME=admin-$(head /dev/urandom | tr -dc a-z0-9 | head -c5)
