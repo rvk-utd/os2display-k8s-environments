@@ -27,10 +27,13 @@ if [[ -f "${SECRETS_PATH}" ]] ; then
     exit 1
 fi
 
+KUBE_CONTEXT=$(kubectl config current-context)
 echo "Upgrading ${ENV}."
 echo
 echo "Will"
 echo "- Do a helm upgrade of ${RELEASE_NAME} using the values from ${VALUES_PATH} using the chart ${CHART_PATH}"
+echo
+echo "Your current kubectl context is ${KUBE_CONTEXT}"
 read -p "Continue? (y/n) " -n 1 -r
 echo
 if [[ ! $REPLY =~ ^[Yy]$ ]]
