@@ -2,7 +2,7 @@
 images:
   adminRelease:
     image: eu.gcr.io/os2display-bbs/os2display-bbs/os2display-admin-release
-    tag: bbs-build-19
+    tag: bbs-develop-2946 
   adminPhp:
     image: reload/os2display-admin-php
     tag: reload-2.2.0
